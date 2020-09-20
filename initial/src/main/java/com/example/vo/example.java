@@ -2,7 +2,10 @@ package com.example.vo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 
+@Service
+@Scope("application")
 public class example {
 
 	String str;
@@ -27,8 +30,8 @@ public class example {
 		this.i = j;
 	}
 	
-	@Bean
-	@Scope("application")
+	
+
 	public example singExample()
 	{
 		example a = new example();

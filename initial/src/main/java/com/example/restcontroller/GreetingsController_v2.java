@@ -20,8 +20,8 @@ import com.example.vo.Student;
 import com.example.vo.example;
 
 @RestController
-@RequestMapping("greetings/v1")
-public class GreetingsController {
+@RequestMapping("greetings/v2")
+public class GreetingsController_v2 {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();

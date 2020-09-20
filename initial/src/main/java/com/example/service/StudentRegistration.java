@@ -1,20 +1,36 @@
 package com.example.service;
 
 import java.util.ArrayList;
+import com.example.entity.*;
 import java.util.List;
 
-import com.example.vo.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class StudentRegistration {
+import com.example.repo.StudentRepo;
+
+@Service
+public class StudentRegistration implements IStudentService {
 	
-	private List<Student> studentRecords;
+/*private List<Student> studentRecords;
 	
 	private static StudentRegistration stdregd = null;
 	
 	StudentRegistration() {
 		studentRecords = new ArrayList<Student>();
 	}
+	*/
 	
+    @Autowired
+    private StudentRepo repository;
+
+    @Override
+    public List<Student> findAll() {
+
+        return (List<Student>) repository.findAll();
+    }
+	
+	/*
 	public static StudentRegistration getInstance() {
 		
 	if (stdregd ==null) {
@@ -54,4 +70,5 @@ public class StudentRegistration {
 		    public List<Student> getStudentRecords() {
 		    return studentRecords;
 		    }
-}
+*/
+    }
